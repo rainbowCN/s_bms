@@ -1,0 +1,69 @@
+/**
+ * Theme Base. Bootstrap 3.1.+ using Bootswatch Cosmo
+ *
+ * Start a new theme:
+ * ------------------
+ * 0. create a new folder under /themes
+ * 1. copy the /less folder from this one into the new theme folder
+ * 2. run `node tools/themeprep/run.js <your new theme name>`
+ * 3. start tweaking the new theme
+ * 4. re-run step.2 whenever you want to update /fonts or have added new icons into /img folders
+ *
+ * @author Tim.Liu
+ * @created 2014.03.09
+ * @updated 2014.07.22
+ */
+
+//Animation - animate.css
+@import (inline) "../../../bower_components/animate.css/animate.css";
+
+//jQuery UI minimum
+@import (inline) "../../../bower_components/jquery-ui/themes/base/jquery.ui.core.css";
+@import (inline) "../../../bower_components/jquery-ui/themes/base/jquery.ui.resizable.css";
+@import (inline) "../../../bower_components/jquery-ui/themes/base/jquery.ui.selectable.css";
+
+//Base - Bootstrap + FontAwesome
+@import "../../../bower_components/fontawesome/less/font-awesome.less";
+@import "../../../bower_components/bootstrap/less/bootstrap.less";
+
+//Base+ - Cosmo theme from Bootswatch
+@import "../../../bower_components/bootswatch/cosmo/bootswatch.less";
+@import "../../../bower_components/bootswatch/cosmo/variables.less";
+
+//Fonts & Logo/Icons
+//Note: Together with bootstrap and fontawesome icon-fonts, fonts are copied by the theme prep tool into /fonts)
+@import "../../../bower_components/open-sans-fontface/open-sans.less";
+//@import "../img/img.less"; //this is produced by the theme prep tool.
+
+//Theming related (color, size and effects)
+@import "vars.less"; //- reusable theme variables (colors, sizes and gaps), modify this to change your theme
+//@import "mixins.less"; //- add more short-cut funcz/stylez into this one
+
+//Framework - Widgets/Editors/Plugins/Containers
+@import "components.less"; //- add more style to this one if added new components
+
+//Cordova app fix
+* {
+	-webkit-touch-callout:none; //disable link menu when using cordova
+	-webkit-user-select:none; //disable content select/copy in cordova
+}
+
+input, select, textarea {
+	-webkit-user-select:auto;
+}
+
+//==========================================================================================================
+//Put your context specific styles below this line:
+//==========================================================================================================
+
+
+//@import "contexts.less";
+
+//or put directly here:
+
+/*
+.context-abc {
+	//for context named Abc
+}
+*/
+
