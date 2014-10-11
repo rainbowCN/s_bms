@@ -16,12 +16,12 @@
         "action": "#navigate/Index/Blog",
         "nodes": [
             {
-                "nodeName": "Sina",
-                "action": "#navigate/Index/Blog/Sina"
+                "nodeName": "Article",
+                "action": "#navigate/Index/Article"
             },
             {
-                "nodeName": "163",
-                "action": "#navigate/Index/Blog/163"
+                "nodeName": "Image",
+                "action": "#navigate/Index/Image"
             }
         ]
     }

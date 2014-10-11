@@ -46,6 +46,14 @@
                     }
                 }
         	}),
+    		onNavigateTo: function(subpath) {	
+    			console.log(">>>>>>>>>>>>>"+subpath);
+    			if(subpath) {
+        			var parts = subpath.split('/');
+        			var subView = parts.pop();
+        			this.parentCtx.trigger('view:navigate-to-sub-view', subView);    				
+    			}
+    		},
         	onShow: function(){
         		var that = this;
                 app.remote("menu").done(function(data){

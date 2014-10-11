@@ -1,5 +1,5 @@
 (function(app) {
-    app.regional('Blog', {
+    app.regional('Article', {
         className: 'panel panel-default',
         template: [
 			'<div class="panel-body" region="m-content">',
@@ -60,20 +60,20 @@
         	    className: 'pagination pagination-sm pull-right'
         	});     
         	datagrid.trigger('view:load-page', {
-        	    url: 'blog', // {blog}
+        	    url: 'article', // {article}
         	    page: 1,
         	    pageSize: 5
         	});        	
         },
         
         editForm: function(options){
-        	this.form.trigger('region:load-view', 'BlogForm', options); // {blog}Form
+        	this.form.trigger('region:load-view', 'ArticleForm', options); // {article}Form
         },
         
         deleteForm: function(options){
         	var self = this;
         	Application.remote({
-        	    entity: 'blog', // {blog}
+        	    entity: 'article', // {article}
         	    payload: { _id: options.id }
         	}).done(function(){
         		self.form.currentView.close();

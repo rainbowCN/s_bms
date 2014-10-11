@@ -7,7 +7,8 @@ Application.setup({
     ],
     contextRegion: 'body', //use region 'body' as the context region
     defaultContext: 'Index',
-    loginContext: 'Login'
+    loginContext: 'Login',
+	baseAjaxURI: '/api'    
 }).run();
 
 Application.addInitializer(function(options) {

@@ -14,10 +14,11 @@
         	console.log("initialize");
         },
         onNavigateTo: function(subpath) {
-        	console.log("subpath", subpath);
+        	if(subpath) {
+            	console.log("Navigate to subpath: "+subpath);
+            	this.sidebar.currentView.trigger('view:navigate-to', subpath);        		
+        	}
         },
-        onSwitchContent: function(options){
-    	},
     	onShow: function(){
             TreeNode = Backbone.Model.extend({
                 initialize: function(){
@@ -33,6 +34,8 @@
             });
             this.sidebar.trigger('region:load-view', "Menu", {collection: new TreeNodeCollection(), dataURL: 'menu'});   
             this.content.trigger('region:load-view', "User");
+    	},
+    	onNavigateToSubView: function(subpath){
     	}
     });
 })(Application);
