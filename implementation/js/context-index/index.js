@@ -15,24 +15,12 @@
         },
         onNavigateTo: function(subpath) {
         	if(subpath) {
-            	console.log("Navigate to subpath: "+subpath);
+            	console.log("NAVIGATE TO SUBPATH:: "+subpath);
             	this.sidebar.currentView.trigger('view:navigate-to', subpath);        		
         	}
         },
     	onShow: function(){
-            TreeNode = Backbone.Model.extend({
-                initialize: function(){
-                    var nodes = this.get("nodes");
-                    if (nodes){
-                        this.nodes = new TreeNodeCollection(nodes);
-                        this.unset("nodes");
-                    }
-                }        
-            });
-            TreeNodeCollection = Backbone.Collection.extend({
-                model: TreeNode
-            });
-            this.sidebar.trigger('region:load-view', "Menu", {collection: new TreeNodeCollection(), dataURL: 'menu'});   
+            this.sidebar.trigger('region:load-view', "Menu", {dataURL: 'menu'});   
             this.content.trigger('region:load-view', "User");
     	},
     	onNavigateToSubView: function(subpath){

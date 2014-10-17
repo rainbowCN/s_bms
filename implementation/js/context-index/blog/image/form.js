@@ -1,11 +1,12 @@
 (function(app) {
-	app.widget('ImageForm', function(){ //{Blog}
+	app.widget('ImageForm', function(){ //{Image}
         return app.view({
         	effect: 'fade',
             className: 'panel panel-default',
-            template: '#form-image-tpl', //{image}
-            initialize: function(options){ 
-            	this.id = options.id;
+            template: '@model/form.html',
+            initialize: function(options){
+            	this.id = options.id;            	
+        		this.model = app.model({'modelName':'mageTest'});
             	this.listenTo(this, 'editor:focusout', this.immediatelyVal);
             },  
             immediatelyVal: function(name) {
@@ -86,24 +87,5 @@
             }
         }); 
     });
-	app.Util.Tpl.build('form-image-tpl', [ //{image}
-        '<div class="panel-body">',
-			'<form class="form-horizontal">',
-				'<fieldset>',
-					'<legend>Blog Info</legend>', //{BLog}
-					'<div editor="id"></div>',
-					'<div editor="title"></div>', //{title} 
-					'<div editor="content"></div>', //{content} 			   						
-					'<div class="form-group">',
-				      	'<div class="col-md-10 col-md-offset-4">',
-				      		'<button class="btn btn-primary" type="button" action="submit" style="margin-right:10px">Submit</button>',
-				      		'<button class="btn btn-default" type="button" action="cancel">Cancel</button>',
-				      	'</div>',
-				    '</div>',						
-				'</fieldset>',
-			'</form>',			
-	  	'</div>'     
-	]);
-
 })(Application);
 

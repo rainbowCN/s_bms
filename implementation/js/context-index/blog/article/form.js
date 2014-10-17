@@ -1,9 +1,9 @@
 (function(app) {
-	app.widget('ArticleForm', function(){ //{Blog}
+	app.widget('ArticleForm', function(){ //{Article}
         return app.view({
         	effect: 'fade',
             className: 'panel panel-default',
-            template: '#form-blog-tpl', //{blog}
+            template: '#form-article-tpl', //{article}
             initialize: function(options){ 
             	this.id = options.id;
             	this.listenTo(this, 'editor:focusout', this.immediatelyVal);
@@ -58,7 +58,7 @@
                 		var _data = this.getValues();
                 		if(_data.id==="-1"){ _.omit(_data, 'id'); } else { _data._id = _data.id; }
                 		app.remote({
-                		    entity: 'blog', //{blog}
+                		    entity: 'article', //{article}
                 		    payload: _data
                 		}).done(function(){
                 			self.close();
@@ -71,7 +71,7 @@
                 if(this.id){
                     var that = this;                	
                     app.remote({
-                        entity: 'blog', //{blog} 
+                        entity: 'article', //{article} 
                         _id: this.id
                     }).done(function(data){
                     	_.map(data, function(val, key){ 
@@ -86,11 +86,11 @@
             }
         }); 
     });
-	app.Util.Tpl.build('form-blog-tpl', [ //{blog}
+	app.Util.Tpl.build('form-article-tpl', [ //{article}
         '<div class="panel-body">',
 			'<form class="form-horizontal">',
 				'<fieldset>',
-					'<legend>Blog Info</legend>', //{BLog}
+					'<legend>Article Info</legend>', //{Article}
 					'<div editor="id"></div>',
 					'<div editor="title"></div>', //{title} 
 					'<div editor="content"></div>', //{content} 			   						

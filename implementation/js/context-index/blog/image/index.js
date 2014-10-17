@@ -1,16 +1,7 @@
 (function(app) {
     app.regional('Image', {
         className: 'panel panel-default',
-        template: [
-			'<div class="panel-body" region="m-content">',
-   				'<div><button type="button" class="btn btn-primary" style="float:right" action="add">Add</button></div>',
-   				'<div style="clear:both"></div>',
-   				'<div region="datagrid"></div>',
-   				'<div region="pagination"></div>',
-   				'<div style="clear:both"></div>',
-       			'<div region="form" view="App::Blank"></div>',		
-		  	'</div>'                   
-        ],
+		template: '@model/model.html',
         actions: { 
         	_bubble: true,
             'add': function($triggerTag, e){
@@ -60,20 +51,20 @@
         	    className: 'pagination pagination-sm pull-right'
         	});     
         	datagrid.trigger('view:load-page', {
-        	    url: 'article', // {article}
+        	    url: 'image', // {image}
         	    page: 1,
         	    pageSize: 5
         	});        	
         },
         
         editForm: function(options){
-        	this.form.trigger('region:load-view', 'ImageForm', options); // {article}Form
+        	this.form.trigger('region:load-view', 'ImageForm', options); // {Image}Form
         },
         
         deleteForm: function(options){
         	var self = this;
         	Application.remote({
-        	    entity: 'article', // {article}
+        	    entity: 'image', // {image}
         	    payload: { _id: options.id }
         	}).done(function(){
         		self.form.currentView.close();
