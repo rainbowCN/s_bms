@@ -16,8 +16,8 @@
         "action": "#navigate/Index/Blog",
         "nodes": [
             {
-                "nodeName": "Article",
-                "action": "#navigate/Index/Article"
+                "nodeName": "Atricel",
+                "action": "#navigate/Index/Atricle"
             },
             {
                 "nodeName": "Image",
