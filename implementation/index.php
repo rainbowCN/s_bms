@@ -10,7 +10,7 @@ require '../engine/data/core/classesautoloader.php';
 
 $app = new \Slim\Slim();
 $app->response->headers->set('Content-Type', 'application/json');
-$app->add(new AuthMiddleware());
+//$app->add(new AuthMiddleware());
 $app->add(new FormatResponseMiddleware());
 
 $app->config('prefix', "bms_");

@@ -1,0 +1,11 @@
+{
+  "name": "bms_create",
+  "version": "0.0.1",
+  "description": "auto create bms model.",
+  "main": "create.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

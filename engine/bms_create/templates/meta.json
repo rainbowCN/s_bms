@@ -1,0 +1,45 @@
+{
+	"name":"Article",
+	"alias": "article",
+	"showProperties": [
+	 					{"key":"id", "value":true},
+	 					{"key":"title", "value":true},
+	 					{"key":"content", "value":true}
+	],
+  	"editors": {
+				"id": {
+                    "type": "text",
+                    "label": "Id",
+                    "layout": {
+                    	"label": "col-sm-2",
+                    	"field": "col-sm-6"
+                    }
+                },            	
+                "title": {
+                    "type": "text",
+                    "label": "Title",
+                    "layout": {
+                    	"label": "col-sm-2",
+                    	"field": "col-sm-6"
+                    },
+                    "validate": { 
+                        "required": {
+                            "msg": "Name can be null!"
+                        } 
+                    }	
+                },               
+                "content": {
+                    "type": "textarea",
+                    "label": "Content",
+                    "layout": {
+                    	"label": "col-sm-2",
+                    	"field": "col-sm-6"
+                    },
+                    "validate": { 
+                       "required": {
+                           "msg": "Name  be null!"
+                        } 
+                    }	
+                }             
+    }
+}
