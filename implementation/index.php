@@ -64,7 +64,7 @@ $app->get('/api/menu', function() use ($app) {
 		$result = array();
 		$result = file_get_contents("./static/config_data/menu.json");
 		if(preg_match('/^\xEF\xBB\xBF/',$result)){
-			//$result=substr($result,3);
+			$result=substr($result,3);
 		}
 		echo $result;
 	} catch(Exception $e) {
