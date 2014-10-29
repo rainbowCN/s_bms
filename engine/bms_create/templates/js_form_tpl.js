@@ -10,7 +10,13 @@
             immediatelyVal: function(name) {
             	this.getEditor(name).validate(true);
             },
-            editors: "{{editors}}",
+            editors: {
+            	 {{#editors}} 
+            	 	{{key}}":{"
+            	 		"type:"{{value.type}}
+            	 	"}"
+            	 {{/editors}}
+            },
             actions: {
                 _bubble: false,
                 'cancel': function($triggerTag, e){
