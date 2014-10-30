@@ -16,6 +16,9 @@
                     		"label": "col-sm-2",
                     		"field": "col-sm-6"
                     	}
+                    },
+                    "validate": { 
+                    }
                 },
                 { 
                 	"key":"title",    
@@ -27,14 +30,14 @@
                     		"field": "col-sm-6"
                     	},
                     	"validate": { 
-                        	"required": {
-                           	 	"msg": "Name can be null!"
-                        	} 
-                    	}	
+                    	    "name": "required",
+                        	"content": "{ \"msg\": \"Name can be null!\"}" 
+                    	}
+                    }	
                 }, 
                 {
-                    "key":"content"
-                	"data": {
+                    "key":"content",
+                	"value": {
                     	"type": "textarea",
                     	"label": "Content",
                     	"layout": {

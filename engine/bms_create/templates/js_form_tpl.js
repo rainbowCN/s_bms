@@ -12,9 +12,17 @@
             },
             editors: {
             	 {{#editors}} 
-            	 	{{key}}":{"
-            	 		"type:"{{value.type}}
-            	 	"}"
+            	 	{{key}}:{
+            	 		"type":{{value.type}},
+            	 		"label":{{value.label}},
+            	 		"layout":{
+            	 			"label": {{value.layout.label}},
+                        	"field": {{value.layout.field}}
+            	 		},
+            	 		"validate":{
+            	 			"{{value.validate.name}}":{{{value.validate.content}}}
+            	 		}
+            	 	},
             	 {{/editors}}
             },
             actions: {
