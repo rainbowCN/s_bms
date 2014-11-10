@@ -11,6 +11,7 @@
             	this.getEditor(name).validate(true);
             },
             editors: {
+<<<<<<< HEAD:engine/bms_create/templates/model_form.js
                {{#editors}}
                     {{key}}: {
                         type: '{{value.type}}',
@@ -21,6 +22,21 @@
                         }
                     },  
                 {{/editors}}
+=======
+            	 {{#editors}} 
+            	 	{{key}}:{
+            	 		"type":{{value.type}},
+            	 		"label":{{value.label}},
+            	 		"layout":{
+            	 			"label": {{value.layout.label}},
+                        	"field": {{value.layout.field}}
+            	 		},
+            	 		"validate":{
+            	 			"{{value.validate.name}}":{{{value.validate.content}}}
+            	 		}
+            	 	},
+            	 {{/editors}}
+>>>>>>> cfd12c3ee0289449c347cf312c786b6c07be6f3b:engine/bms_create/templates/js_form_tpl.js
             },
             actions: {
                 _bubble: false,

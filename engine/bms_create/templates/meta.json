@@ -33,6 +33,7 @@
         }      
     ],
   	"editors": [
+<<<<<<< HEAD
 		{
 		    "key":"id", 
 			"value": {
@@ -56,6 +57,50 @@
             	"validate": { 
                 	"required": {
                    	 	"msg": "Name can be null!"
+=======
+				{
+				    "key":"id", 
+					"value": {
+                    	"type": "text",
+                    	"label": "Id",
+                    	"layout": {
+                    		"label": "col-sm-2",
+                    		"field": "col-sm-6"
+                    	}
+                    },
+                    "validate": { 
+                    }
+                },
+                { 
+                	"key":"title",    
+                	"value": {
+                    	"type": "text",
+                    	"label": "Title",
+                    	"layout": {
+                    		"label": "col-sm-2",
+                    		"field": "col-sm-6"
+                    	},
+                    	"validate": { 
+                    	    "name": "required",
+                        	"content": "{ \"msg\": \"Name can be null!\"}" 
+                    	}
+                    }	
+                }, 
+                {
+                    "key":"content",
+                	"value": {
+                    	"type": "textarea",
+                    	"label": "Content",
+                    	"layout": {
+                    		"label": "col-sm-2",
+                    		"field": "col-sm-6"
+                    	},
+                    	"validate": { 
+                       		"required": {
+                           		"msg": "Name  be null!"
+                        	} 
+                    	}	
+>>>>>>> cfd12c3ee0289449c347cf312c786b6c07be6f3b
                 	} 
             	}
             }	

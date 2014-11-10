@@ -12,6 +12,7 @@ handlebars = require('handlebars'),
 js_beautify = require('js-beautify').js_beautify,
 filed = require('filed');
 
+<<<<<<< HEAD
 handlebars.registerHelper('display', function(items) {
 	for(var i=0, l=items.length; i<l; i++){
 		items[i] = "key==='"+items[i].key+"'";	
@@ -21,6 +22,14 @@ handlebars.registerHelper('display', function(items) {
 
 // CREATE JAVASCRIPT INDEX.
 fs.readFile('templates/model_index.js', 'UTF-8', function(err, data){
+=======
+handlebars.registerHelper('validate', function(text) { 
+	  text = Handlebars.Utils.escapeExpression(text); 
+	  return new Handlebars.SafeString(text); 
+	});
+
+fs.readFile('templates/js_form_tpl.js', 'UTF-8', function(err, data){
+>>>>>>> cfd12c3ee0289449c347cf312c786b6c07be6f3b
 	var tpl = handlebars.compile(data);
 	fs.readFile('templates/meta.json', 'UTF-8', function(err, data){
 		var data = JSON.parse(data);
