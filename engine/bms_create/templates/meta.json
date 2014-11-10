@@ -1,52 +1,87 @@
 {
-	"name":"Article",
-	"alias": "article",
+	"name":"Comment",
+	"alias": "comment",
 	"properties": [
-	 					{"key":"id", "value":true},
-	 					{"key":"title", "value":true},
-	 					{"key":"content", "value":true}
+		{"key":"id", "value":true},
+		{"key":"title", "value":true},
+		{"key":"content", "value":true}
 	],
+    "columns":[
+        {
+            "key":"id", 
+            "value": {
+                "label": "#Id",
+                "icon": "fa fa-github-alt",
+                "cell": ""
+            }
+        },
+        { 
+            "key":"title",    
+            "value": {
+                "label": "#title",
+                "icon": "fa fa-github-alt",
+                "cell": ""
+            }
+        }, 
+        {
+            "key":"content",
+            "value": {
+                "label": "#Content",
+                "icon": "fa fa-envelope",
+                "cell": "operate"
+            }
+        }      
+    ],
   	"editors": [
-				{
-				    "key":"id", 
-					"value": {
-                    	"type": "text",
-                    	"label": "Id",
-                    	"layout": {
-                    		"label": "col-sm-2",
-                    		"field": "col-sm-6"
-                    	}
-                },
-                { 
-                	"key":"title",    
-                	"value": {
-                    	"type": "text",
-                    	"label": "Title",
-                    	"layout": {
-                    		"label": "col-sm-2",
-                    		"field": "col-sm-6"
-                    	},
-                    	"validate": { 
-                        	"required": {
-                           	 	"msg": "Name can be null!"
-                        	} 
-                    	}	
-                }, 
-                {
-                    "key":"content"
-                	"data": {
-                    	"type": "textarea",
-                    	"label": "Content",
-                    	"layout": {
-                    		"label": "col-sm-2",
-                    		"field": "col-sm-6"
-                    	},
-                    	"validate": { 
-                       		"required": {
-                           		"msg": "Name  be null!"
-                        	} 
-                    	}	
+		{
+		    "key":"id", 
+			"value": {
+            	"type": "text",
+            	"label": "Id",
+            	"layout": {
+            		"label": "col-sm-2",
+            		"field": "col-sm-6"
+            	}
+            }
+        },
+        { 
+        	"key":"title",    
+        	"value": {
+            	"type": "text",
+            	"label": "Title",
+            	"layout": {
+            		"label": "col-sm-2",
+            		"field": "col-sm-6"
+            	},
+            	"validate": { 
+                	"required": {
+                   	 	"msg": "Name can be null!"
                 	} 
-                }            
-    ]
+            	}
+            }	
+        }, 
+        {
+            "key":"content",
+        	"value": {
+            	"type": "textarea",
+            	"label": "Content",
+            	"layout": {
+            		"label": "col-sm-2",
+            		"field": "col-sm-6"
+            	},
+            	"validate": { 
+               		"required": {
+                   		"msg": "Name  be null!"
+                	} 
+            	}	
+            }
+        }            
+    ],
+    "sql": [
+        {"key":"id", "type":"int(11)", "validate":"NOT NULL", "ext":"AUTO_INCREMENT"},
+        {"key":"title", "type":"varchar(255)", "validate":"NOT NULL", "ext":""},
+        {"key":"content", "type":"text", "validate":"NOT NULL", "ext":""},
+        {"key":"createDate", "type":"datetime", "validate":"NOT NULL", "ext":""},
+        {"key":"modifyDate", "type":"datetime", "validate":"NOT NULL", "ext":""}
+    ]    
 }
