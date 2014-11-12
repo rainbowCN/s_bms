@@ -15,7 +15,7 @@
         },
         onNavigateTo: function(subpath) {
         	if(subpath) {
-            	console.log("NAVIGATE TO SUBPATH:: "+subpath);
+            	console.log("INDEX NAVIGATE TO SUBPATH:: "+subpath);
             	this.sidebar.currentView.trigger('view:navigate-to', subpath);        		
         	}
         },

@@ -22,7 +22,11 @@
             {
                 "nodeName": "Image",
                 "action": "#navigate/Index/Image"
-            }
+            },
+            {
+                "nodeName": "Comment",
+                "action": "#navigate/Index/Comment"
+            }            
         ]
     }
 ]

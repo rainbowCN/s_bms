@@ -11,3 +11,21 @@
 
 4¡¢Ìí¼ÓSQL ÎÄ¼þ
 /_s_bms/engine/data/module/mysql/blog.php
+
+
+1¡¢exec comment.sql
+
+2¡¢copy "comment.php" to "/_s_bms/engine/data/module/mysql/comment.php"
+
+3¡¢copy "comment_form||index.js" to "/_s_bms/implementation/js/context-index/blog/comment"
+
+4¡¢modify "index.html" and import *.js
+  <script type="text/javascript" src="js/context-index/blog/comment/comment_form.js"></script>      
+  <script type="text/javascript" src="js/context-index/blog/comment/comment_index.js"></script> 
+
+5¡¢add menu 
+	{
+	    "nodeName": "Comment",
+	    "action": "#navigate/Index/Comment"
+	}  
+

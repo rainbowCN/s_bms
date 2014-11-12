@@ -82,20 +82,17 @@
     });
     app.Util.Tpl.build('form-comment-tpl', [ //{article}
         '<div class="panel-body">',
-        '<form class="form-horizontal">',
-        '<fieldset>',
-        '<legend>Comment Info</legend>', //{Name}
-        '<div editor=""></div>',
-        '<div editor=""></div>',
-        '<div editor=""></div>',
-        '<div class="form-group">',
-        '<div class="col-md-10 col-md-offset-4">',
-        '<button class="btn btn-primary" type="button" action="submit" style="margin-right:10px">Submit</button>',
-        '<button class="btn btn-default" type="button" action="cancel">Cancel</button>',
-        '</div>',
-        '</div>',
-        '</fieldset>',
-        '</form>',
+            '<form class="form-horizontal">',
+                '<fieldset>',
+                    '<legend>Comment Info</legend>', //{Name}
+                    '<div class="form-group">',
+                        '<div class="col-md-10 col-md-offset-4">',
+                            '<button class="btn btn-primary" type="button" action="submit" style="margin-right:10px">Submit</button>',
+                            '<button class="btn btn-default" type="button" action="cancel">Cancel</button>',
+                        '</div>',
+                    '</div>',
+                '</fieldset>',
+            '</form>',
         '</div>'
     ]);
 

@@ -14,7 +14,7 @@
         actions: { 
         	_bubble: true,
             'add': function($triggerTag, e){
-            	this.form.trigger('region:load-view', 'BlogForm', {});
+            	this.form.trigger('region:load-view', 'ArticleForm', {});
             }          
         },     
         onShow: function() {

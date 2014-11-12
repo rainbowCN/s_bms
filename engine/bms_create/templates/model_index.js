@@ -1,7 +1,7 @@
 (function(app) {
     app.regional('{{name}}', {
         className: 'panel panel-default',
-        template: '#form-{{alias}}-tpl', //{article}
+        template: '#index-{{alias}}-tpl', //{article}
         actions: { 
         	_bubble: true,
             'add': function($triggerTag, e){
@@ -73,22 +73,24 @@
 			this.datagrid.currentView.trigger('view:load-page', {});
         }             
     });
+    
+    app.Util.Tpl.build('index-{{alias}}-tpl', [ 
+      '<div class="panel-body">',
+        '<div class="model-info hidden">',
+        '<div class="title text-primary">{{name}}</div>',
+          '<ol class="breadcrumb"><li><a href="#">1</a></li></ol>',
+        '</div>',
+        '<div class="model-header clearfix">',
+          '<div class="pull-right"><button type="button" class="btn btn-primary" action="add">Add</button></div> ',
+        '</div>',
+        '<div class="model-body">',
+          '<div region="datagrid"></div>',
+          '<div region="pagination" class="clearfix"></div>',    
+          '<div region="form" view="App::Blank"></div>',
+        '</div>',
+        '<div class="model-footer"></div>',
+      '</div>'     
+    ]);    
 })(Application);
 
-app.Util.Tpl.build('form-{{alias}}-tpl', [ 
-  '<div class="panel-body">',
-    '<div class="model-info hidden">',
-    '<div class="title text-primary">{{name}}</div>',
-      '<ol class="breadcrumb"><li><a href="#">1</a></li></ol>',
-    '</div>',
-    '<div class="model-header clearfix">',
-      '<div class="pull-right"><button type="button" class="btn btn-primary" action="add">Add</button></div> '
-    '</div>',
-    '<div class="model-body">',
-      '<div region="datagrid"></div>',
-      '<div region="pagination" class="clearfix"></div>'    
-      '<div region="form" view="App::Blank"></div>',
-    '</div>',
-    '<div class="model-footer"></div>',
-  '</div>'     
-]);
+
