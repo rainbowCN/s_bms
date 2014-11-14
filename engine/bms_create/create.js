@@ -19,6 +19,15 @@ handlebars.registerHelper('display', function(items) {
 	return items.join("||");
 });
 
+handlebars.registerHelper('list', function(items) {
+	var content = "222";
+	for(var i=0, l=items.length; i<l; i++){
+		//content +='<div editor="'>+items[i].key+'"></div>';
+		content+=items[i].key;
+	}
+	return content;
+});
+
 // CREATE JAVASCRIPT INDEX.
 fs.readFile('templates/model_index.js', 'UTF-8', function(err, data){
 	var tpl = handlebars.compile(data);

@@ -66,9 +66,9 @@
 			'<form class="form-horizontal">',
 				'<fieldset>',
 					'<legend>{{name}} Info</legend>', //{Name}
-            		{{#properties}}
-						'<div editor="{{key}}"></div>',
-        			{{/properties}}					
+            		{{#_properties}}
+						'<div editor={{key}}></div>',
+        			{{/_properties}}					
 					'<div class="form-group">',
 				      	'<div class="col-md-10 col-md-offset-4">',
 				      		'<button class="btn btn-primary" type="button" action="submit" style="margin-right:10px">Submit</button>',

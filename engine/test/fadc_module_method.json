@@ -1,0 +1,7 @@
+{
+	"fn":"fadc_module_method",
+	"args":[
+		{"name":"vdom", "value":"root"},
+		{"name":"mkey", "value":"1"}
+	]
+}

@@ -85,9 +85,9 @@
         '<form class="form-horizontal">',
         '<fieldset>',
         '<legend>Comment Info</legend>', //{Name}
-        '<div editor=""></div>',
-        '<div editor=""></div>',
-        '<div editor=""></div>',
+        '<div editor=id></div>',
+        '<div editor=title></div>',
+        '<div editor=content></div>',
         '<div class="form-group">',
         '<div class="col-md-10 col-md-offset-4">',
         '<button class="btn btn-primary" type="button" action="submit" style="margin-right:10px">Submit</button>',

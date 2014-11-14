@@ -1,11 +1,16 @@
 {
 	"name":"Comment",
 	"alias": "comment",
-	"properties": [
+	"properties":[
 		{"key":"id", "value":true},
 		{"key":"title", "value":true},
 		{"key":"content", "value":true}
 	],
+	"_properties":[
+		{"key":"id", "value":true},
+		{"key":"title", "value":true},
+		{"key":"content", "value":true}
+	],	
     "columns":[
         {
             "key":"id", 
