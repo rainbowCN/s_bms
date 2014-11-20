@@ -10,7 +10,8 @@ var args = process.argv.slice(2);
 var fs = require('fs'),
 handlebars = require('handlebars'),
 js_beautify = require('js-beautify').js_beautify,
-filed = require('filed');
+filed = require('filed'),
+exec = require('child_process').exec; 
 
 handlebars.registerHelper('display', function(items) {
 	for(var i=0, l=items.length; i<l; i++){
@@ -60,9 +61,16 @@ fs.readFile('templates/model.sql', 'UTF-8', function(err, data){
 	fs.readFile('templates/meta.json', 'UTF-8', function(err, data){
 		var data = JSON.parse(data);
 		var code = tpl(data);
-		var f = filed('./output/'+data.alias+'.sql');
-		f.write(code);
-		f.end();		
+		var sql_file = "./output/"+data.alias+".sql"; 
+		fs.writeFile(sql_file, code, function (err) {
+		  	if (err) throw err;
+		  	console.log("BMS_CREATE::SQL("+data.alias+".sql) IS OK!");
+			var cmd = "mysql -utester -p123456 --default-character-set=utf8 bms < "+sql_file;
+			exec(cmd, function callback(err) { 
+				if(err) throw err;
+				console.log("BMS_EXECUTE::SQL("+data.alias+".sql) IS OK!");
+			});	
+		});	
 	});
 });
 

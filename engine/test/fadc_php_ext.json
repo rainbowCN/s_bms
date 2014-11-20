@@ -1,0 +1,7 @@
+{
+	"fn":"fadc_php_ext",
+	"args":[
+		{"name":"vdom", "value":"root"},
+		{"name":"mkey", "value":"1"}
+	]
+}
