@@ -88,5 +88,7 @@
         {"key":"content", "type":"text", "validate":"NOT NULL", "ext":""},
         {"key":"createDate", "type":"datetime", "validate":"NOT NULL", "ext":""},
         {"key":"modifyDate", "type":"datetime", "validate":"NOT NULL", "ext":""}
-    ]    
+    ],
+    "php_path": "../data/module/mysql/",
+    "js_path": "../../implement/js/context-index/blog/"  
 }

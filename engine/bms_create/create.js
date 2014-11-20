@@ -38,7 +38,10 @@ fs.readFile('templates/model_index.js', 'UTF-8', function(err, data){
 		code = js_beautify(code);
 		var f = filed('./output/'+data.alias+'_index.js');
 		f.write(code);
-		f.end();		
+		f.end();
+		var f = filed(data.js_path+data.alias+'_form.js');
+		f.write(code);
+		f.end();				
 	});
 });
 
@@ -51,7 +54,10 @@ fs.readFile('templates/model_form.js', 'UTF-8', function(err, data){
 		code = js_beautify(code);
 		var f = filed('./output/'+data.alias+'_form.js');
 		f.write(code);
-		f.end();		
+		f.end();	
+		var f = filed(data.js_path+data.alias+'_form.js');
+		f.write(code);
+		f.end();
 	});
 });
 
@@ -82,6 +88,9 @@ fs.readFile('templates/model.php', 'UTF-8', function(err, data){
 		var code = tpl(data);
 		var f = filed('./output/'+data.alias+'.php');
 		f.write(code);
-		f.end();		
+		f.end();	
+		var f = filed(data.php_path+data.alias+'.php');
+		f.write(code);
+		f.end();			
 	});
 });
